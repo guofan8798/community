@@ -16,6 +16,7 @@
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -52,7 +53,60 @@
             <scope>test</scope>
         </dependency>
 
-    </dependencies>
+		<!--SpringEmail依赖-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-mail</artifactId>
+			<version>2.7.0</version>
+		</dependency>
+
+		<!--判断字符串、集合等常用数据类型的空值的情况-->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.12.0</version>
+		</dependency>
+
+		<!--生成验证码-->
+		<dependency>
+			<groupId>com.github.penggle</groupId>
+			<artifactId>kaptcha</artifactId>
+			<version>2.3.2</version>
+		</dependency>
+
+		<!--处理json字符串的-->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>2.0.5</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-aop</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<!--aop织入-->
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+			<version>1.9.5</version>
+		</dependency>
+
+		<!--kafka-->
+		<dependency>
+			<groupId>org.springframework.kafka</groupId>
+			<artifactId>spring-kafka</artifactId>
+		</dependency>
+
+		<!--ElasticSearch-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-elasticsearch</artifactId>
+		</dependency>
+
+	</dependencies>
 
 	<build>
 		<plugins>
@@ -60,7 +114,13 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<!--修改版本-->
+				<version>3.1.0</version>
+			</plugin>
 		</plugins>
 	</build>
-
 </project>
